@@ -1,7 +1,9 @@
-# Jessica_DATA606
-Spring 2022 - Data Science Capstone Project
+# Finding the Cheat Codes for Game Development
+Jessica Conroy
+Data 606, Spring 2022
+Data Science Capstone Project
 
-## Project Proposal: How to win at game development
+## Project Proposal
 
 ## Motivation:
 
