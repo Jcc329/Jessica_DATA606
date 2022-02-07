@@ -11,6 +11,7 @@ Data Science Capstone Project <br>
 Why is this issue important to you and/or to others? </i><br>
 
 The game industry is an intensely competitive, multi-billion-dollar industry, with tens of thousands of games being released every year. Both large game producers and small indie game developers are competing in this space, and while many games succeed, many more fail. Steam, a video game distribution service, released more than 10,000 games in 2020 alone (Number of Games Released on Steam 2021, n.d.). Needless to say, the industry does not look like it’s slowing down any time soon (Video Game Market Value Worldwide 2015, n.d.). Not only are the number of games produced growing every year, but so are the types of games and the number of players. As more powerful graphics cards and gaming architecture is being developed, as well as a global pandemic to contend with, the uses of gaming are evolving as well, with more and more players turning to games as a social outlet (Global Insights Report - Google for Games, n.d.). In their 2021 Global Insights Report, Google found an increase of 45% in the number of gamers playing new games since the start of the pandemic (Global Insights Report - Google for Games, n.d.). One approach that the report highlighted as successful is a player-first strategy, stating that ‘the best game developers deeply understand their players’ (Global Insights Report - Google for Games, n.d.).  But how does a game developer understand their players? <br>
+
 With so many games and game related metadata available, and so much competition, it seems a small step to use machine learning techniques to try to better understand players and their behavior as well as to predict the success of game concepts before even starting game development. This project aims to solve some of the ambiguity around what game elements lead to high ratings by genre, and how that may have changed as a result of the pandemic. <br>
 
 Sources: <br>
@@ -64,6 +65,9 @@ How do you plan to develop/apply ML and how you evaluate/compare the performance
 What outcomes do you intend to achieve (better understanding of problems, tools to help solve problems, predictive analytics with practical applications, etc)? </i><br>
 
 This project will include a combination of Natural Language Processing (NLP), and deep learning techniques. I aim to both identify the characteristics of successful games by genre as well as create a model for predicting whether a new game will receive high ratings.  <br>
+
 I plan to use NLP for the analysis of description and review text data, clustering, and identifying common features that can then contribute to a machine learning model for predicting if a game will be successful or not. <br>
+
 Provided the time exists, I would like to combine this with an analysis of the artwork (thumbnail images) associated with the games, to see if art style can predict higher ratings, or higher rates of ownership (judging a book by its cover, so-to-speak).<br>
+
 The practical applications of this project include the ability to provide game developers with a clear outline of what players look for in games, as well as some metrics for making business decisions. For example, investing heavily in artwork may lead to more sales, since gamers may be drawn to try out prettier games.
