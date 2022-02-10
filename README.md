@@ -37,6 +37,8 @@ What variables/measures do you plan to use in your analysis (variables should be
 
 The data I would like to focus on comes from the game distributor Steam. There are several methods for accessing data from steam, using both Steam’s native API (https://partner.steamgames.com/doc/webapi_overview) or other APIs built to access steam data more easily (SteamSpy for example). I plan to experiment a bit to identify which method provides access to the most robust data (more games) as well as the features I’m interested in, and combining across datasets. <br>
 
+Features of interest include:
+
 -	Metacritic rating of the game (target)
 -	Name
 -	App ID
