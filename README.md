@@ -36,8 +36,9 @@ What will be your unit of analysis (for example, patient, organization, or count
 What variables/measures do you plan to use in your analysis (variables should be tied to the questions in #3)? </i><br>
 
 The data I would like to focus on comes from the game distributor Steam. There are several methods for accessing data from steam, using both Steam’s native API (https://partner.steamgames.com/doc/webapi_overview) or other APIs built to access steam data more easily (SteamSpy for example). I plan to experiment a bit to identify which method provides access to the most robust data (more games) as well as the features I’m interested in, and combining across datasets. <br>
-Features of interest include the metacritic rating of the game (target) as well as:
+Features of interest inclue:
 
+-	Metacritic rating of the game (target)
 -	Name
 -	App ID
 -	Detailed description 
