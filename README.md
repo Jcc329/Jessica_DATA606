@@ -35,11 +35,12 @@ Video game market value worldwide 2015. (n.d.). Statista. Retrieved February 6, 
 What will be your unit of analysis (for example, patient, organization, or country)? Roughly how many units (observations) do you expect to analyze?
 What variables/measures do you plan to use in your analysis (variables should be tied to the questions in #3)? </i><br>
 
-The data I would like to focus on comes from the game distributor Steam. There are several methods for accessing data from steam, using both Steam’s native API (https://partner.steamgames.com/doc/webapi_overview) or other APIs built to access steam data more easily (SteamSpy for example). I plan to experiment a bit to identify which method provides access to the most robust data (more games) as well as the features I’m interested in, and combining across datasets. <br>
+The data I would like to focus on comes from the game distributor Steam. There are several methods for accessing data from steam, using both Steam’s native API (https://partner.steamgames.com/doc/webapi_overview) or other APIs built to access steam data more easily (SteamSpy for example). Additionally, I plan to use steamapis.com to get market data on game sales (units/games sold at what price). I plan to experiment a bit to identify which method provides access to the most robust data (more games) as well as the features I’m interested in, and combining across datasets. <br>
 
 Features of interest include:
 
 -	Metacritic rating of the game (target)
+-	Review Score
 -	Name
 -	App ID
 -	Detailed description 
@@ -50,15 +51,21 @@ Features of interest include:
 -	Developer
 -	Average/median Playtime
 -	Price
--	Reviews
+-	Reviews (Top 20 per game sorted on Up Votes, decending) 
 -	Game tags
 -	Gaming platform
 -	When it was released
 -	Purchase counts/How many people own the game
+-	How many games where sold at what prices
 -	Potentially image data for the thumbnail (speaks to art style)
 
+#### Target Variable (s)
+The metacritic score ranges from 0-100 with higher scores representing better reviews. The score itself is calculated using a weighted average of published critic reviews. Details on how this is calculated can be found here (https://www.metacritic.com/about-metascores)
+
+There is also an aggregate review score based on weighted steam user scores associated with review text. I will collect this data as well. During exploritory analysis, I will compare how metacritic scores and user scores correlate to success metrics like how many times the game was purchased, how much time is spent playing (median playtime), and game sales. I will then be able to determine which is a better metric for identifying characteristics that lead to practical success in the game industry. 
+
 This list may change as I explore the available features via the API.<br>
-My unit of analysis is at the game level. I am hoping to analyze at least 10,000 games, with a equal sampling across the last 5 years (providing a pre-covid and post-covid time frame)
+My unit of analysis is at the game level. I am hoping to analyze at least 10,000 games split between two years, 2019 and 2021 to represent the before covid time period and the during covid time period. 
 
 ## Methods:
 
