@@ -3,8 +3,6 @@ Jessica Conroy <br>
 Data 606, Spring 2022 <br>
 Data Science Capstone Project <br>
 
-## Project Proposal
-
 ## Motivation:
 
 <i> What is your issue of interest (provide sufficient background information)?
