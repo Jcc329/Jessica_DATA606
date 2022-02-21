@@ -3,10 +3,13 @@ Jessica Conroy <br>
 Data 606, Spring 2022 <br>
 Data Science Capstone Project <br>
 
-## Motivation:
+<b>Last Updated 2/20/2022</b>
+- added API notebook to Raw_data file
+- added raw API data to Raw_data file
+- added Data Cleaning Notebook to Clean_Data file
+- added Clean Data csv to Clean_Data file
 
-<i> What is your issue of interest (provide sufficient background information)?
-Why is this issue important to you and/or to others? </i><br>
+## Project Motivation:
 
 The game industry is an intensely competitive, multi-billion-dollar industry, with tens of thousands of games being released every year. Both large game producers and small indie game developers are competing in this space, and while many games succeed, many more fail. Steam, a video game distribution service, released more than 10,000 games in 2020 alone (Number of Games Released on Steam 2021, n.d.). Needless to say, the industry does not look like it’s slowing down any time soon (Video Game Market Value Worldwide 2015, n.d.). Not only are the number of games produced growing every year, but so are the types of games and the number of players. As more powerful graphics cards and gaming architecture is being developed, as well as a global pandemic to contend with, the uses of gaming are evolving as well, with more and more players turning to games as a social outlet (Global Insights Report - Google for Games, n.d.). In their 2021 Global Insights Report, Google found an increase of 45% in the number of gamers playing new games since the start of the pandemic (Global Insights Report - Google for Games, n.d.). One approach that the report highlighted as successful is a player-first strategy, stating that ‘the best game developers deeply understand their players’ (Global Insights Report - Google for Games, n.d.).  But how does a game developer understand their players? <br>
 
@@ -19,8 +22,6 @@ Number of games released on Steam 2021. (n.d.). Statista. Retrieved February 6, 
 Video game market value worldwide 2015. (n.d.). Statista. Retrieved February 6, 2022, from https://www.statista.com/statistics/292056/video-game-market-value-worldwide/
 
 ## Research Questions
-
-<i> What questions do you have in mind and would like to answer? </i><br>
 
 •	What game characteristics are predictive of a high game rating? <br>
 •	Are these characteristics different across different genres of game?<br>
@@ -36,37 +37,47 @@ What variables/measures do you plan to use in your analysis (variables should be
 The data I would like to focus on comes from the game distributor Steam. There are several methods for accessing data from steam, using both Steam’s native API (https://partner.steamgames.com/doc/webapi_overview) or other APIs built to access steam data more easily (SteamSpy for example). Additionally, I plan to use steamapis.com to get market data on game sales (units/games sold at what price). I plan to experiment a bit to identify which method provides access to the most robust data (more games) as well as the features I’m interested in, and combining across datasets. <br>
 
 Features of interest include:
-
--	Metacritic rating of the game (target)
--	Review Score
--	Name
--	App ID
--	Detailed description 
--	Categories (contains information like whether or not the game is multiplayer or single player, PvP, has split screen, etc.)
--	Whether or not it’s a demo, beta, etc.
--	Required age to play
--	Genre
--	Developer
--	Average/median Playtime
--	Price
--	Reviews (Top 20 per game sorted on Up Votes, decending) 
--	Game tags
--	Gaming platform
--	When it was released
--	Purchase counts/How many people own the game
--	How many games where sold at what prices
--	Potentially image data for the thumbnail
+(This list has been updated based on the finalized fields pulled from the API).
+- Game Type ('type')
+- Game Name ('name')
+- app ID ('steam_appid') 
+- Required Age to Play ('required_age') 
+- Is the Game Free ('is_free')
+- Detailed Game Description ('detailed_description')
+- About Game text ('about_the_game') 
+- Short Game Description ('short_description')
+- Supported languages ('supported_languages' - field will be broken into columns for each language) 
+- Developer ('developers') 
+- Publisher ('publishers')
+- Supported Platforms ('platforms' - will be broken out into columns for each, ex. mac, windows, linux)
+- Category Tags ('categories' broken out into columns, ex. Single-Player, PvP, Downloadable Content, etc.)
+- Game Genre Tags ('genres' - will be broken into columns, ex. action, RPG, Indie)
+- Release Date ('release_date')
+- Notes on game content such as age suitability ('content_descriptors')
+- Weighted average review score on steam ('Review Score')
+- Description of review score ('Review Score Description', ex. Overwhelmingly positive)
+- Text from up to 20 top reviews based on upvotes ('Top Reviews by Upvotes')
+- Number of positive reviews ('positive')
+- Number of negative reviews ('negative')
+- Average user scores collected by metacritic ('userscore')
+- Range representing the number of people owning a game on steam ('owners')
+- Average playtime since March 2009, minutes ('average_forever')
+- Average playtime in the last two weeks, minutes ('average_2weeks')
+- Median playtime since March 2009, minutes ('median_forever')
+- Median playtime in the last two weeks, minutes ('median_2weeks') 
+- Game price now ('price') 
+- Game price at release ('initialprice') 
+- Current game discount in percent ('discount')
+- Peak count of concurrent users worldwide in the last day('ccu')
+- Game tags on content ('tags')
 
 #### Target Variable (s)
-The metacritic score ranges from 0-100 with higher scores representing better reviews. The score itself is calculated using a weighted average of published critic reviews. Details on how this is calculated can be found here (https://www.metacritic.com/about-metascores)
 
-There is also an aggregate review score based on weighted steam user scores associated with review text. I will collect this data as well. During exploritory analysis, I will compare how metacritic scores and user scores correlate to success metrics like how many times the game was purchased, how much time is spent playing (median playtime), and game sales. I will then be able to determine which is a better metric for identifying characteristics that lead to practical success in the game industry. 
+The original project plan included using metacritic score as a target variable for building a machine learning model. Upon investigation I found that only a small fraction of games had an associated metacritic score (about 2-3% of the sample I collected for initial analysis). There was much better representation in the data for review scores from steam and user scores from metacritic representing the average user score fore the game. I will explore these fields further to see if they correllate and, if so, will then use the one with more complete data as a target metric. I will therefore use this and potentially number of games sold, as a target variable for game likeability and success.
 
-This list may change as I explore the available features via the API.<br>
 My unit of analysis is at the game level. I am hoping to analyze at least 10,000 games split between two years, 2019 and 2021 to represent the before covid time period and the during covid time period. 
 
 ## Methods:
-<i> What kinds of techniques/models do you plan to use (for example, clustering, NLP, ARIMA, etc.)?</i><br>
 
 This project will include a combination of Natural Language Processing (NLP), and deep learning techniques. I aim to both identify the characteristics of successful games by genre as well as create a model for predicting whether a new game will receive high ratings.  <br>
 
@@ -89,11 +100,7 @@ Lee, D. D., & Seung, H. S. (1999). Learning the parts of objects by non-negative
 For the machine learning portion of the project the goal is to build a model that, given characteristics of a game, will predict the success metric of that game. The specific target metric is yet to be decided as are the methods used to build the predictive model. There are several potential models I could use to predict an outcome. I will likely attempt using a classic neural network (multi-layer perceptron) as my primary method, but test against other models to make sure a simpler model wouldn’t perform better.   
 Additionally if I do end up having time to work with the image thumbnails for each game, I would like to use the methods described in the link below, to convert the image data into color palates, which can then be added to the model discussed above.  Future work might entail clustering images and then building a CNN to identify if image style can predict success of a game, but this is currently outside the scope of a single semester capstone. <br>
 
-<i>How do you plan to develop/apply ML and how you evaluate/compare the performance of the models? </i><br>
-
 The metric I use to show success of the model will depend on the target variable I choose to attempt to predict. if I end up using a classification via score, I will use accuracy, but if I end up using sales or products sold, I will use root mean squared error (RMSE). <br>
-
-<i> What outcomes do you intend to achieve (better understanding of problems, tools to help solve problems, predictive analytics with practical applications, etc)?  </i><br>
 
 The practical applications of this project include the ability to provide game developers with a clear outline of what players look for in games, as well as some metrics for making business decisions. For example, investing a game that supports multi-player capabilities may be more important to the success of a game than game length. Further, I aim to identify any significant changes in what makes a successful game as a result of the COVID 19 pandemic, and to incorporate those findings into the process of building this model. <br>
 
