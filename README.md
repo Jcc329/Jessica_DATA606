@@ -7,6 +7,7 @@ Data Science Capstone Project <br>
 - added API notebook to Raw_data file
 - added raw API data to Raw_data file
 - added Data Cleaning Notebook to Clean_Data file
+- added Clean Data csv to Clean_Data file
 
 ## Project Motivation:
 
