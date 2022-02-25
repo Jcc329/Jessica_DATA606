@@ -112,6 +112,10 @@ With so many data fields it is difficult to summarize the findings sucinctly. Th
     Most features don't appear to have strong correlations with anything else. 
     Unsuprisingly, the categorical features (things like Action, RPG, etc) are more correlated with eachother, likely because when the data was present it was likely to include multiple features. 
     Additionally amount played was correlated with itself in all it's forms (median, average, forever, last 2 weeks, etc.)
+    
+   <p align="center">
+  <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Variable%20Correlation%20Matrix.png" width="350" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
+  </p>
 
 3. Missing Data:
     Several features were missing significant chunks of data. 
