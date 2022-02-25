@@ -98,7 +98,34 @@ Features of interest include:
 
 <b> Exploratory Analysis Results </b>
 
+Pandas Profiling Key Findings:
 
+With so many data fields it is difficult to summarize the findings sucinctly. Therefore, I will focus on key features and findings.
+
+1. My target variables are missing a lot of data:
+    Review Score: 74% zeros, <.01% missing
+    User Score: 99.9% zeros
+    Owners: Categorical with heavy right skew. Data not missing
+    Metacritic Score: 96.4% Missing
+    
+2. Correlation: 
+    Most features don't appear to have strong correlations with anything else. 
+    Unsuprisingly, the categorical features (things like Action, RPG, etc) are more correlated with eachother, likely because when the data was present it was likely to include multiple features. 
+    Additionally amount played was correlated with itself in all it's forms (median, average, forever, last 2 weeks, etc.)
+
+3. Missing Data:
+    Several features were missing significant chunks of data. 
+    44% of games had no reviews.
+
+4. Text data analyses
+    The frequencies of words in the text fields reveal that several stopwords are still a problem. 
+
+5. One duplicate game was identified
+
+
+
+
+<b> Next Steps </b>
 
 ## Methods:
 
