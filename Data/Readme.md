@@ -1,0 +1,1 @@
+This file contains the raw and cleaned data files for this project. The data contained here was extracted for initial exploratory analysis. The project itself was run using a larger sample of game data that was too big to store on github, but is available upon request.
