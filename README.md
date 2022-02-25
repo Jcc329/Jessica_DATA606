@@ -110,7 +110,7 @@ With so many data fields it is difficult to summarize the findings sucinctly. Th
     
 Despite there being so many games with a zero review score (essentially indicating that there were not reviews) there are still 4788 games with scores. That is sufficient to work with for training my machine learning model. I also have the categorical owner's field, which despite being skewed, is a strong target for measuring game success.
 
-    <b> Figure 1. Top 10 Bins for Number of People who Own Each Game, range </b>
+<b> Figure 1. Top 10 Bins for Number of People who Own Each Game, range </b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Top%2010%20Owner%20Categories.png" width="700" title="Bar Chart showing the Top 10 bins for people who own each game." alt="The bar chart is heavily skewed to the right, with the majority of games having 0 to 20,000 owners and decreasing from there.">
     
@@ -121,7 +121,7 @@ Despite there being so many games with a zero review score (essentially indicati
     
     <b> Figure 2. Spearman's Correlation Matrix </b>
    <p align="center">
-      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Variable%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Variable%20Correlation%20Matrix.png" width="350" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
   </p>
 
 3. Missing Data:
