@@ -105,16 +105,23 @@ With so many data fields it is difficult to summarize the findings sucinctly. Th
 1. My target variables are missing a lot of data:
     Review Score: 74% zeros, <.01% missing
     User Score: 99.9% zeros
-    Owners: Categorical with heavy right skew. Data not missing
+    Owners: Categorical with heavy right skew. This can be seen in the figure below, however there is very little missint data.
     Metacritic Score: 96.4% Missing
+    
+Despite there being so many games with a zero review score (essentially indicating that there were not reviews) there are still 4788 games with scores. That is sufficient to work with for training my machine learning model. I also have the categorical owner's field, which despite being skewed, is a strong target for measuring game success.
+
+    <b> Figure 1. Top 10 Bins for Number of People who Own Each Game, range </b>
+   <p align="center">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Top%2010%20Owner%20Categories.png" width="700" title="Bar Chart showing the Top 10 bins for people who own each game." alt="The bar chart is heavily skewed to the right, with the majority of games having 0 to 20,000 owners and decreasing from there.">
     
 2. Correlation: 
     Most features don't appear to have strong correlations with anything else. 
     Unsuprisingly, the categorical features (things like Action, RPG, etc) are more correlated with eachother, likely because when the data was present it was likely to include multiple features. 
     Additionally amount played was correlated with itself in all it's forms (median, average, forever, last 2 weeks, etc.)
     
+    <b> Figure 2. Spearman's Correlation Matrix </b>
    <p align="center">
-  <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Variable%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Variable%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
   </p>
 
 3. Missing Data:
