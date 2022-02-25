@@ -1,15 +1,30 @@
 # Finding the Cheat Codes for Game Development
-Jessica Conroy <br>
+By <a href="https://github.com/Jcc329">Jessica Conroy Styer</a><br>
 Data 606, Spring 2022 <br>
 Data Science Capstone Project <br>
 
-<b>Last Updated 2/20/2022</b>
-- added API notebook to Raw_data file
-- added raw API data to Raw_data file
-- added Data Cleaning Notebook to Clean_Data file
-- added Clean Data csv to Clean_Data file
+## Table of Contents
 
-## Project Motivation:
+<ul>
+  <li><b>Data</b> - The small sample data files for this project</li>
+  <ul>
+    <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Data/RawSteamGameData.zip">Raw Data</a> - The xip file with a sample of raw, pre-processed game data on which to replicate methods demonstrated in this project.</li>
+    <li><a href="https://github.com/Jcc329/Jessica_DATA606/tree/main/Cleaned_Data">Clean Data</a> - The zip file with a sample of the cleaned game data on which to replicate methods demonstrated in this project.</li>
+  </ul>
+  <li><b>Notebooks</b> - Project Notebooks</li>
+  <ul>
+    <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/1.Accessing_Steam_APIs.ipynb">1. Data Acquisition</a></li> - Notebook for accessing the steam APIs and collecting raw data
+    <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/2.Steam_Data_Cleaning.ipynb">2. Data Cleaning</a></li> - Notebook for applying basic data cleaning techniques
+    <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/3.%20EDA%20with%20Pandas%20Profiling.ipynb">3. Preliminary Exploratory Analysis</a></li> - Notebook for generating a pandas profile widget and exploring the data features
+    <li><a href="">4. Topic Modeling and Text EDA</a> - Notebook containing text exploratory analysis </li>
+  </ul>
+  <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/README.md">README.md</a> - An overview of the project and results</li> 
+  <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Proposal.md">Project Proposal</a> - The .py file containing functions called in the notebooks</li
+  <li><b>Supplemental Files</b> - Files containing supporting python functions for this analysis</li>
+  <li><b>Report and Presentations</b> - File containing Project Presentations and the Final Report</li>
+</ul>
+
+## Introduction
 
 The game industry is an intensely competitive, multi-billion-dollar industry, with tens of thousands of games being released every year. Both large game producers and small indie game developers are competing in this space, and while many games succeed, many more fail. Steam, a video game distribution service, released more than 10,000 games in 2020 alone (Number of Games Released on Steam 2021, n.d.). Needless to say, the industry does not look like it’s slowing down any time soon (Video Game Market Value Worldwide 2015, n.d.). Not only are the number of games produced growing every year, but so are the types of games and the number of players. As more powerful graphics cards and gaming architecture is being developed, as well as a global pandemic to contend with, the uses of gaming are evolving as well, with more and more players turning to games as a social outlet (Global Insights Report - Google for Games, n.d.). In their 2021 Global Insights Report, Google found an increase of 45% in the number of gamers playing new games since the start of the pandemic (Global Insights Report - Google for Games, n.d.). One approach that the report highlighted as successful is a player-first strategy, stating that ‘the best game developers deeply understand their players’ (Global Insights Report - Google for Games, n.d.).  But how does a game developer understand their players? <br>
 
@@ -30,11 +45,21 @@ Video game market value worldwide 2015. (n.d.). Statista. Retrieved February 6, 
 
 ## Data
 
-<i> Where do you get the data to analyze and help answer your questions (creditability of source, quality of data, size of data, attributes of data. etc.)?
-What will be your unit of analysis (for example, patient, organization, or country)? Roughly how many units (observations) do you expect to analyze?
-What variables/measures do you plan to use in your analysis (variables should be tied to the questions in #3)? </i><br>
+<b> Data Collection </b><br>
 
-The data I would like to focus on comes from the game distributor Steam. There are several methods for accessing data from steam, using both Steam’s native API (https://partner.steamgames.com/doc/webapi_overview) or other APIs built to access steam data more easily (SteamSpy for example). Additionally, I plan to use steamapis.com to get market data on game sales (units/games sold at what price). I plan to experiment a bit to identify which method provides access to the most robust data (more games) as well as the features I’m interested in, and combining across datasets. <br>
+Data for this project came from a total of 4 API calls. The first call was to obtain the complete list of Steam Game IDs https://api.steampowered.com/ISteamApps/GetAppList/v2/. Documentation for this API call can be found at the following URL: https://partner.steamgames.com/doc/webapi/ISteamApps <br>
+After retreiving the App IDs I use them to make 3 additional API calls:
+    Steam API 1: primary game data
+    Steam API 2: Review data (https://partner.steamgames.com/doc/store/getreviews)
+    Steamspy API: Supplemental usage and cost data (https://steamspy.com/api.php)
+Due to time and space constraints, a random sample of games were selected. The initial data pull was run for 6 hours and resulted in 7,309 games. Raw and Clean versions of that data are available in this repository. 
+
+<a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Cleaned_Data/CleanSteamGameData%20(1).zip">Cleaned Data</a>
+<a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Raw_data/RawSteamGameData.zip">Raw Data</a>
+
+The descriptive statistics and Pandas Profile can be viewed by running the following notebook: <a href="url">Pandas Profiling of Steam Data</a>
+
+A larger dataset was used for the remainder of this project. This was run for 18 hours and resulted in 18,424 games. This data could not be stored on Github due to a large file size (152 MB unzipped, about 35 MB zipped), but is available upon request. 
 
 Features of interest include:
 (This list has been updated based on the finalized fields pulled from the API).
@@ -71,11 +96,49 @@ Features of interest include:
 - Peak count of concurrent users worldwide in the last day('ccu')
 - Game tags on content ('tags')
 
-#### Target Variable (s)
+<b> Exploratory Analysis Results </b>
 
-The original project plan included using metacritic score as a target variable for building a machine learning model. Upon investigation I found that only a small fraction of games had an associated metacritic score (about 2-3% of the sample I collected for initial analysis). There was much better representation in the data for review scores from steam and user scores from metacritic representing the average user score fore the game. I will explore these fields further to see if they correllate and, if so, will then use the one with more complete data as a target metric. I will therefore use this and potentially number of games sold, as a target variable for game likeability and success.
+Pandas Profiling Key Findings:
 
-My unit of analysis is at the game level. I am hoping to analyze at least 10,000 games split between two years, 2019 and 2021 to represent the before covid time period and the during covid time period. 
+With so many data fields it is difficult to summarize the findings sucinctly. Therefore, I will focus on key features and findings.
+
+1. My target variables are missing a lot of data:
+    Review Score: 74% zeros, <.01% missing
+    User Score: 99.9% zeros
+    Owners: Categorical with heavy right skew. This can be seen in the figure below, however there is very little missint data.
+    Metacritic Score: 96.4% Missing
+    
+Despite there being so many games with a zero review score (essentially indicating that there were not reviews) there are still 4788 games with scores. That is sufficient to work with for training my machine learning model. I also have the categorical owner's field, which despite being skewed, is a strong target for measuring game success.
+
+<b> Figure 1. Top 10 Bins for Number of People who Own Each Game, range </b>
+   <p align="center">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Top%2010%20Owner%20Categories.png" width="350" title="Bar Chart showing the Top 10 bins for people who own each game." alt="The bar chart is heavily skewed to the right, with the majority of games having 0 to 20,000 owners and decreasing from there.">
+    
+2. Correlation: 
+    Most features don't appear to have strong correlations with anything else. 
+    Unsuprisingly, the categorical features (things like Action, RPG, etc) are more correlated with eachother, likely because when the data was present it was likely to include multiple features. 
+    Additionally amount played was correlated with itself in all it's forms (median, average, forever, last 2 weeks, etc.)
+    
+    <b> Figure 2. Spearman's Correlation Matrix </b>
+   <p align="center">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Variable%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
+  </p>
+
+3. Missing Data:
+    Several features were missing significant chunks of data. 
+    44% of games had no reviews.
+
+4. Text data analyses
+    The frequencies of words in the text fields reveal that several stopwords are still a problem. 
+
+5. One duplicate game was identified
+
+<b> Next Steps </b>
+
+Next steps will include: 
+- identifying and dropping fields with high numbers of missing data
+- performing topic modeling on text in the complete dataset (description and tag text)
+- filtering a subset of the data that contains review score and assessing the completeness of that data. 
 
 ## Methods:
 
