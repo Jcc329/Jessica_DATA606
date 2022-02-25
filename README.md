@@ -133,10 +133,12 @@ Despite there being so many games with a zero review score (essentially indicati
 
 5. One duplicate game was identified
 
-
-
-
 <b> Next Steps </b>
+
+Next steps will include: 
+- identifying and dropping fields with high numbers of missing data
+- performing topic modeling on text in the complete dataset (description and tag text)
+- filtering a subset of the data that contains review score and assessing the completeness of that data. 
 
 ## Methods:
 
