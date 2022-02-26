@@ -104,7 +104,7 @@ Despite there being so many games with a zero review score (essentially indicati
 <b> Figure 1.Number of People who Own Each Game, range </b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Owner%20Distribution.png" width="350" title="Bar chart showing the number of games in each bin based on how many people own each game." alt="The bar chart is heavily skewed to the right, with the majority of games having 0 to 20,000 owners and decreasing from there.">
-  <b> Figure 2.Review Score Distribution </b>
+<b> Figure 2.Review Score Distribution </b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/ReviewScoreDistribution.png" width="350" title="Review score frequencies">
   
@@ -120,14 +120,14 @@ Despite there being so many games with a zero review score (essentially indicati
   Unsuprisingly, the categorical features (things like Action, RPG, etc) are more correlated with eachother, likely because when the data was present it was likely to include multiple features.
   Score was highliy correlated with review score, meaning I can drop score, which has less robust data completeness, than review score. 
     
-    <b> Figure 3. Spearman's Correlation Matrix </b>
+<b> Figure 3. Spearman's Correlation Matrix </b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
   </p>
 
 <b> EDA Informed Data Wrangling </b>
 
-    <b> Figure 4. EDA Informed Data Processing Steps </b>
+<b> Figure 4. EDA Informed Data Processing Steps </b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Additional%20Processing.png" width="700" title="Steps for Additional Data Processing">
   </p>
@@ -136,7 +136,7 @@ Despite there being so many games with a zero review score (essentially indicati
 
 After the second round of processing, the correlation matrix is somewhat easier to read:
 
-    <b> Figure 5. Spearman's Correlation Matrix with Reduced Variables </b>
+<b> Figure 5. Spearman's Correlation Matrix with Reduced Variables </b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Updated%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
   </p>
@@ -147,14 +147,14 @@ From this we can see some minor correlations among genres and catagories, but no
 
 The following figures explore distributions in the data.
 
-    <b> Figure 6. Games by Year </b>
+<b> Figure 6. Games by Year </b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/SampledGamesbyYear.png" width="700" title="Games by Year" alt="The number of games released each year has grown steadily, which is reflected in the sample data collected. Time and trend based analyses will require that this be factored in.">
   </p>
   
 The number of games released each year has grown steadily, which is reflected in the sample data collected. Time and trend based analyses will require that this be factored in.
 
-    <b> Figure 7. Most Common Genres and Game Categories</b>
+<b> Figure 7. Most Common Genres and Game Categories</b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/SampledGamesbyGenre.png" width="700" title="Genre Frequency" alt="The number of games released for each genre tag (one game may have multiple genres). The most common genres were Indie and Action.">
         <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/SampledGamesbyCategory.png" width="700" title="Category Frequency" alt="The number of games released for each category tag (one game may have multiple categories). The most common category was single player, followed by Steam Acheivements and Downloadable content.">
@@ -162,11 +162,11 @@ The number of games released each year has grown steadily, which is reflected in
 
 Figure 7 shows the number of games that had each of the Genre or Category tags associated with them. A game could have multiple Genres or Categories. Examining the most commonly made game genres and categories (Indie, Action, and Single Player) made me wonder how these have changed over time. The next set of figures looks at the proportions of games released by genre and category.
 
-    <b> Figure 8. Change in Genre Composition of Games Released over Time</b>
+<b> Figure 8. Change in Genre Composition of Games Released over Time</b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Change%20in%20Genre%20over%20Time.png" width="700" title="Genre over Time" alt="The porportion of each genre represented in a year over time.">
   </p>
-    <b> Figure 9. Change in Category Composition of Games Released over Time</b>
+<b> Figure 9. Change in Category Composition of Games Released over Time</b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Change%20in%20Categories%20over%20Time.png" width="700" title="Category over Time" alt="The porportion of each category represented in a year over time.">
     </p>
