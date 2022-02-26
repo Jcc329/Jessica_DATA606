@@ -57,39 +57,30 @@ Due to time and space constraints, a random sample of games were selected. The i
 <a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Cleaned_Data/CleanSteamGameData%20(1).zip">Cleaned Data</a>
 <a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Raw_data/RawSteamGameData.zip">Raw Data</a>
 
-The descriptive statistics and Pandas Profile can be viewed by running the following notebook: <a href="url">Pandas Profiling of Steam Data</a>
+The descriptive statistics and Pandas Profile can be viewed by running the following notebook: <a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/3.%20EDA%20with%20Pandas%20Profiling.ipynb">Pandas Profiling of Steam Data</a>
 
-A larger dataset was used for the remainder of this project. This was run for 18 hours and resulted in 18,424 games. This data could not be stored on Github due to a large file size (152 MB unzipped, about 35 MB zipped), but is available upon request. 
+A larger dataset was used for the remainder of this project. This was run for 18 hours and resulted in a raw count of 18,424 games. This data could not be stored on Github due to a large file size (152 MB unzipped, about 35 MB zipped), but is available upon request. 
+
+After initial exploration and additional processing of the data (see figure4), the final dataset is 14,952 rows and 79 columns. 
 
 Features of interest include:
-(This list has been updated based on the finalized fields pulled from the API).
+
 - Game Type ('type')
 - Game Name ('name')
 - app ID ('steam_appid') 
 - Required Age to Play ('required_age') 
 - Is the Game Free ('is_free')
 - Detailed Game Description ('detailed_description')
-- About Game text ('about_the_game') 
 - Short Game Description ('short_description')
-- Supported languages ('supported_languages' - field will be broken into columns for each language) 
-- Developer ('developers') 
-- Publisher ('publishers')
 - Supported Platforms ('platforms' - will be broken out into columns for each, ex. mac, windows, linux)
 - Category Tags ('categories' broken out into columns, ex. Single-Player, PvP, Downloadable Content, etc.)
 - Game Genre Tags ('genres' - will be broken into columns, ex. action, RPG, Indie)
-- Release Date ('release_date')
-- Notes on game content such as age suitability ('content_descriptors')
 - Weighted average review score on steam ('Review Score')
 - Description of review score ('Review Score Description', ex. Overwhelmingly positive)
 - Text from up to 20 top reviews based on upvotes ('Top Reviews by Upvotes')
 - Number of positive reviews ('positive')
 - Number of negative reviews ('negative')
-- Average user scores collected by metacritic ('userscore')
 - Range representing the number of people owning a game on steam ('owners')
-- Average playtime since March 2009, minutes ('average_forever')
-- Average playtime in the last two weeks, minutes ('average_2weeks')
-- Median playtime since March 2009, minutes ('median_forever')
-- Median playtime in the last two weeks, minutes ('median_2weeks') 
 - Game price now ('price') 
 - Game price at release ('initialprice') 
 - Current game discount in percent ('discount')
@@ -110,10 +101,13 @@ With so many data fields it is difficult to summarize the findings sucinctly. Th
     
 Despite there being so many games with a zero review score (essentially indicating that there were not reviews) there are still 4788 games with scores. That is sufficient to work with for training my machine learning model. I also have the categorical owner's field, which despite being skewed, is a strong target for measuring game success.
 
-<b> Figure 1. Top 10 Bins for Number of People who Own Each Game, range </b>
+<b> Figure 1.Number of People who Own Each Game, range </b>
    <p align="center">
-      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Top%2010%20Owner%20Categories.png" width="350" title="Bar Chart showing the Top 10 bins for people who own each game." alt="The bar chart is heavily skewed to the right, with the majority of games having 0 to 20,000 owners and decreasing from there.">
-    
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Owner%20Distribution.png" width="350" title="Bar chart showing the number of games in each bin based on how many people own each game." alt="The bar chart is heavily skewed to the right, with the majority of games having 0 to 20,000 owners and decreasing from there.">
+  <b> Figure 2.Review Score Distribution </b>
+   <p align="center">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/ReviewScoreDistribution.png" width="350" title="Review score frequencies">
+  
 2. Missing Data:
     Several features were missing significant chunks of data. 
     44% of games had no reviews.
@@ -126,27 +120,66 @@ Despite there being so many games with a zero review score (essentially indicati
   Unsuprisingly, the categorical features (things like Action, RPG, etc) are more correlated with eachother, likely because when the data was present it was likely to include multiple features.
   Score was highliy correlated with review score, meaning I can drop score, which has less robust data completeness, than review score. 
     
-    <b> Figure 2. Spearman's Correlation Matrix </b>
+    <b> Figure 3. Spearman's Correlation Matrix </b>
    <p align="center">
-      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Variable%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
   </p>
 
-<b> Next Steps </b>
+<b> EDA Informed Data Wrangling </b>
 
-    <b> Figure 3. EDA Informed Data Processing Steps </b>
+    <b> Figure 4. EDA Informed Data Processing Steps </b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Additional%20Processing.png" width="700" title="Steps for Additional Data Processing">
   </p>
   
 <b> Exploratory Analysis Part 2 </b>
 
-Updated Feature Correlation
-    
-    <b> Figure 4. Spearman's Correlation Matrix with Reduced Variables </b>
+After the second round of processing, the correlation matrix is somewhat easier to read:
+
+    <b> Figure 5. Spearman's Correlation Matrix with Reduced Variables </b>
    <p align="center">
-      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Updated%20Variable%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Updated%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
   </p>
   
+From this we can see some minor correlations among genres and catagories, but no major fields correlating with the target variables. As expected, fields like price, initial price, and discount are also highly correlated. When training an ML model I will remove fields (like price) that are highly similar to other featuers.
+
+<b> Feature Explorations </b>
+
+The following figures explore distributions in the data.
+
+    <b> Figure 6. Games by Year </b>
+   <p align="center">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/SampledGamesbyYear.png" width="700" title="Games by Year" alt="The number of games released each year has grown steadily, which is reflected in the sample data collected. Time and trend based analyses will require that this be factored in.">
+  </p>
+  
+The number of games released each year has grown steadily, which is reflected in the sample data collected. Time and trend based analyses will require that this be factored in.
+
+    <b> Figure 7. Most Common Genres and Game Categories</b>
+   <p align="center">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/SampledGamesbyGenre.png" width="700" title="Genre Frequency" alt="The number of games released for each genre tag (one game may have multiple genres). The most common genres were Indie and Action.">
+        <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/SampledGamesbyCategory.png" width="700" title="Category Frequency" alt="The number of games released for each category tag (one game may have multiple categories). The most common category was single player, followed by Steam Acheivements and Downloadable content.">
+  </p>
+
+Figure 7 shows the number of games that had each of the Genre or Category tags associated with them. A game could have multiple Genres or Categories. Examining the most commonly made game genres and categories (Indie, Action, and Single Player) made me wonder how these have changed over time. The next set of figures looks at the proportions of games released by genre and category.
+
+    <b> Figure 8. Change in Genre Composition of Games Released over Time</b>
+   <p align="center">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Change%20in%20Genre%20over%20Time.png" width="700" title="Genre over Time" alt="The porportion of each genre represented in a year over time.">
+  </p>
+    <b> Figure 9. Change in Category Composition of Games Released over Time</b>
+   <p align="center">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Change%20in%20Categories%20over%20Time.png" width="700" title="Category over Time" alt="The porportion of each category represented in a year over time.">
+    </p>
+As can be seen in Figure 8, the proportion of indie games released each year has grown steadily. Action games have settled to a consistent level with casual and adventure games fluctuating below. 
+Figure 9. shows that single player games have and continue to dominate, while other types of games represent fairly consistent proportions of the market.
+  
+One question that I wanted to address was how the proportion of single player games have changed relative to multiplayer games, particularly relative to the COVID-19 Pandemic. Figure 10 shows this trend. While the proportion of single player games released is increasing, the proportion of multiplayer games is staying consistent. This might mean that the demand for single player games is high, OR it may be that single player games are easier to produce, and therefore more common. It will be interesting to investigate this further using review data. 
+<b> Figure 10. Change in Single Player and Multiplayer Games Released, 2018-2022</b>
+   <p align="center">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Change%20in%20Multi-Player%20vs%20Single%20Player%20in%20Last4%20Years.png" width="700" title="Multiplayer vs. Single player" alt="Single Player games are taking up a growing portion of the market while multiplayer stays about the same.">
+    </p>
+  
+
 ## Methods:
 
 This project will include a combination of Natural Language Processing (NLP), and deep learning techniques. I aim to both identify the characteristics of successful games by genre as well as create a model for predicting whether a new game will receive high ratings.  <br>
