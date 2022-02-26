@@ -65,27 +65,7 @@ After initial exploration and additional processing of the data (see figure4), t
 
 Features of interest include:
 
-- Game Type ('type')
-- Game Name ('name')
-- app ID ('steam_appid') 
-- Required Age to Play ('required_age') 
-- Is the Game Free ('is_free')
-- Detailed Game Description ('detailed_description')
-- Short Game Description ('short_description')
-- Supported Platforms ('platforms' - will be broken out into columns for each, ex. mac, windows, linux)
-- Category Tags ('categories' broken out into columns, ex. Single-Player, PvP, Downloadable Content, etc.)
-- Game Genre Tags ('genres' - will be broken into columns, ex. action, RPG, Indie)
-- Weighted average review score on steam ('Review Score')
-- Description of review score ('Review Score Description', ex. Overwhelmingly positive)
-- Text from up to 20 top reviews based on upvotes ('Top Reviews by Upvotes')
-- Number of positive reviews ('positive')
-- Number of negative reviews ('negative')
-- Range representing the number of people owning a game on steam ('owners')
-- Game price now ('price') 
-- Game price at release ('initialprice') 
-- Current game discount in percent ('discount')
-- Peak count of concurrent users worldwide in the last day('ccu')
-- Game tags on content ('tags')
+![image](https://user-images.githubusercontent.com/63023492/155862113-0b32b210-579c-4d90-9917-ae33cb165712.png)
 
 <b> Preliminary Exploratory Analysis </b>
 
@@ -103,11 +83,11 @@ Despite there being so many games with a zero review score (essentially indicati
 
 <b> Figure 1.Number of People who Own Each Game, range </b>
    <p align="center">
-      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Owner%20Distribution.png" width="350" title="Bar chart showing the number of games in each bin based on how many people own each game." alt="The bar chart is heavily skewed to the right, with the majority of games having 0 to 20,000 owners and decreasing from there.">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Owner%20Distribution.png" width="500" title="Bar chart showing the number of games in each bin based on how many people own each game." alt="The bar chart is heavily skewed to the right, with the majority of games having 0 to 20,000 owners and decreasing from there.">
   </p>
 <b> Figure 2.Review Score Distribution </b>
    <p align="center">
-      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/ReviewScoreDistribution.png" width="350" title="Review score frequencies">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/ReviewScoreDistribution.png" width="500" title="Review score frequencies">
   </p>
 2. Missing Data:
     Several features were missing significant chunks of data. 
