@@ -104,10 +104,11 @@ Despite there being so many games with a zero review score (essentially indicati
 <b> Figure 1.Number of People who Own Each Game, range </b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Owner%20Distribution.png" width="350" title="Bar chart showing the number of games in each bin based on how many people own each game." alt="The bar chart is heavily skewed to the right, with the majority of games having 0 to 20,000 owners and decreasing from there.">
+  </p>
 <b> Figure 2.Review Score Distribution </b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/ReviewScoreDistribution.png" width="350" title="Review score frequencies">
-  
+  </p>
 2. Missing Data:
     Several features were missing significant chunks of data. 
     44% of games had no reviews.
