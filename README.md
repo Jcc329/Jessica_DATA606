@@ -63,13 +63,13 @@ A larger dataset was used for the remainder of this project. This was run for 18
 
 After initial exploration and additional processing of the data (see figure4), the final dataset is 14,952 rows and 79 columns. 
 
-Features of interest include:
+### Features of interest include:
 
 ![image](https://user-images.githubusercontent.com/63023492/155862113-0b32b210-579c-4d90-9917-ae33cb165712.png)
 
 <b> Preliminary Exploratory Analysis </b>
 
-Pandas Profiling Key Findings:
+### Pandas Profiling Key Findings:
 
 With so many data fields it is difficult to summarize the findings sucinctly. Therefore, I will focus on key features and findings.
 
@@ -106,14 +106,14 @@ Despite there being so many games with a zero review score (essentially indicati
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
   </p>
 
-<b> EDA Informed Data Wrangling </b>
+### EDA Informed Data Wrangling
 
 <b> Figure 4. EDA Informed Data Processing Steps </b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Additional%20Processing.png" width="700" title="Steps for Additional Data Processing">
   </p>
   
-<b> Exploratory Analysis Part 2 </b>
+### Exploratory Analysis Part 2
 
 After the second round of processing, the correlation matrix is somewhat easier to read:
 
@@ -159,7 +159,6 @@ One question that I wanted to address was how the proportion of single player ga
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Change%20in%20Multi-Player%20vs%20Single%20Player%20in%20Last4%20Years.png" width="700" title="Multiplayer vs. Single player" alt="Single Player games are taking up a growing portion of the market while multiplayer stays about the same.">
     </p>
-  
 
 ## Methods:
 
