@@ -96,7 +96,7 @@ Features of interest include:
 - Peak count of concurrent users worldwide in the last day('ccu')
 - Game tags on content ('tags')
 
-<b> Exploratory Analysis Results </b>
+<b> Preliminary Exploratory Analysis </b>
 
 Pandas Profiling Key Findings:
 
@@ -114,31 +114,49 @@ Despite there being so many games with a zero review score (essentially indicati
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Top%2010%20Owner%20Categories.png" width="350" title="Bar Chart showing the Top 10 bins for people who own each game." alt="The bar chart is heavily skewed to the right, with the majority of games having 0 to 20,000 owners and decreasing from there.">
     
-2. Correlation: 
-    Most features don't appear to have strong correlations with anything else. 
-    Unsuprisingly, the categorical features (things like Action, RPG, etc) are more correlated with eachother, likely because when the data was present it was likely to include multiple features. 
-    Additionally amount played was correlated with itself in all it's forms (median, average, forever, last 2 weeks, etc.)
+2. Missing Data:
+    Several features were missing significant chunks of data. 
+    44% of games had no reviews.
+
+3. Text data analyses
+    The frequencies of words in the text fields reveal that several stopwords are still a problem. 
+
+4. Feature Correlation
+  Most features don't appear to have strong correlations with anything else. 
+  Unsuprisingly, the categorical features (things like Action, RPG, etc) are more correlated with eachother, likely because when the data was present it was likely to include multiple features.
+  Score was highliy correlated with review score, meaning I can drop score, which has less robust data completeness, than review score. 
     
     <b> Figure 2. Spearman's Correlation Matrix </b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Variable%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
   </p>
-
-3. Missing Data:
-    Several features were missing significant chunks of data. 
-    44% of games had no reviews.
-
-4. Text data analyses
-    The frequencies of words in the text fields reveal that several stopwords are still a problem. 
-
-5. One duplicate game was identified
+    
+    <b> Figure 2. Spearman's Correlation Matrix </b>
+   <p align="center">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Variable%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
+  </p>
+  
 
 <b> Next Steps </b>
 
-Next steps will include: 
-- identifying and dropping fields with high numbers of missing data
-- performing topic modeling on text in the complete dataset (description and tag text)
-- filtering a subset of the data that contains review score and assessing the completeness of that data. 
+    <b> Figure 3. EDA Informed Data Processing Steps </b>
+   <p align="center">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Additional%20Processing.png" width="700" title="Steps for Additional Data Processing">
+  </p>
+  
+<b> Exploratory Analysis Part 2 </b>
+
+Updated Feature Correlation
+
+    Most features don't appear to have strong correlations with anything else. 
+    Unsuprisingly, the categorical features (things like Action, RPG, etc) are more correlated with eachother, likely because when the data was present it was likely to include multiple features.
+    
+    <b> Figure 2. Spearman's Correlation Matrix </b>
+   <p align="center">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Variable%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
+  </p>
+  
+  
 
 ## Methods:
 
