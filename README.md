@@ -130,12 +130,6 @@ Despite there being so many games with a zero review score (essentially indicati
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Variable%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
   </p>
-    
-    <b> Figure 2. Spearman's Correlation Matrix </b>
-   <p align="center">
-      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Variable%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
-  </p>
-  
 
 <b> Next Steps </b>
 
@@ -147,17 +141,12 @@ Despite there being so many games with a zero review score (essentially indicati
 <b> Exploratory Analysis Part 2 </b>
 
 Updated Feature Correlation
-
-    Most features don't appear to have strong correlations with anything else. 
-    Unsuprisingly, the categorical features (things like Action, RPG, etc) are more correlated with eachother, likely because when the data was present it was likely to include multiple features.
     
-    <b> Figure 2. Spearman's Correlation Matrix </b>
+    <b> Figure 4. Spearman's Correlation Matrix with Reduced Variables </b>
    <p align="center">
-      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Variable%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
+      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Updated%20Variable%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
   </p>
   
-  
-
 ## Methods:
 
 This project will include a combination of Natural Language Processing (NLP), and deep learning techniques. I aim to both identify the characteristics of successful games by genre as well as create a model for predicting whether a new game will receive high ratings.  <br>
