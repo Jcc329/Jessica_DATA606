@@ -16,7 +16,7 @@ Data Science Capstone Project <br>
     <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/1.Accessing_Steam_APIs.ipynb">1. Data Acquisition</a></li> - Notebook for accessing the steam APIs and collecting raw data
     <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/2.Steam_Data_Cleaning.ipynb">2. Data Cleaning</a></li> - Notebook for applying basic data cleaning techniques
     <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/3.%20EDA%20with%20Pandas%20Profiling.ipynb">3. Preliminary Exploratory Analysis</a></li> - Notebook for generating a pandas profile widget and exploring the data features
-    <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/4_Text_EDA.ipynb">4. Topic Modeling and Text EDA</a> 
+    <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/4_Text_EDA.ipynb">4.Text EDA and COVID Impact Analysis</a> 
       - Notebook containing text exploratory analysis </li>
   </ul>
   <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/README.md">README.md</a> - An overview of the project and results</li> 
