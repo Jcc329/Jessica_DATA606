@@ -173,14 +173,15 @@ When comparing keywords between the pre-COVID and during COVID corpora there wer
 
 <b> preCOVID Results </b>
 ![image](https://user-images.githubusercontent.com/63023492/155868277-bd10961b-1423-4ac8-b7b9-c0288f4d8d53.png)
+
 <b> COVID Results </b>
 ![image](https://user-images.githubusercontent.com/63023492/155868279-574afdc7-dab4-4850-92b7-26fe9583c031.png)
 
-<br>
+
 <b> Figure 12. YAKE Keyword Extraction, Top 10 Keywords for Each Text Field</b>
 ![image](https://user-images.githubusercontent.com/63023492/155868296-8f6a89fd-59d1-40b6-ac53-550cf71012ec.png)
 
-<br>
+
 <b> Figure 13. spaCy Keyword Extraction, Top 10 Keywords for Each Text Field</b>
 <b> All Game Data </b>
 ![image](https://user-images.githubusercontent.com/63023492/155868316-4be80e85-56d4-4806-b316-0906b03f4339.png)
