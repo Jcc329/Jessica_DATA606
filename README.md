@@ -155,12 +155,37 @@ Figure 7 shows the number of games that had each of the Genre or Category tags a
 As can be seen in Figure 8, the proportion of indie games released each year has grown steadily. Action games have settled to a consistent level with casual and adventure games fluctuating below. 
 Figure 9. shows that single player games have and continue to dominate, while other types of games represent fairly consistent proportions of the market.
   
-One question that I wanted to address was how the proportion of single player games have changed relative to multiplayer games, particularly relative to the COVID-19 Pandemic. Figure 10 shows this trend. While the proportion of single player games released is increasing, the proportion of multiplayer games is staying consistent. This might mean that the demand for single player games is high, OR it may be that single player games are easier to produce, and therefore more common. It will be interesting to investigate this further using review data. <br>
-
+One question that I wanted to address was how the proportion of single player games have changed relative to multiplayer games, particularly relative to the COVID-19 Pandemic. Figure 10 shows this trend. While the proportion of single player games released is increasing, the proportion of multiplayer games is staying consistent. This might mean that the demand for single player games is high, OR it may be that single player games are easier to produce, and therefore more common. It will be interesting to investigate this further using review data. 
 <b> Figure 10. Change in Single Player and Multiplayer Games Released, 2018-2022</b>
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Change%20in%20Multi-Player%20vs%20Single%20Player%20in%20Last4%20Years.png" width="700" title="Multiplayer vs. Single player" alt="Single Player games are taking up a growing portion of the market while multiplayer stays about the same.">
     </p>
+
+## Text Exploratory Analysis and Keyword Extraction
+
+Initial analysis of high frequency keywords don't reveal anything significant. More in depth topic modelling will be required to determine if there are differences between the COVID-19 and preCOVID-19 datasets. 
+
+Keywords were explored using three methods: TFIDF Vectorization and Ngram analysis, Yake Keywords, and spaCY keyword extraction. Initial results were not very suggessful, with little meaning in the key words and phrases identified. However, spaCy performed better than Yake.
+
+When comparing keywords between the pre-COVID and during COVID corpora there were no distinct differences at this stage. Additional topic modelling is required to confirm this finding. Figures 11, 12, and 13 show a sample of the results from the keyword extraction. 
+
+<b> Figure 11. TFIDF Vectorization and Ngram Analysis, Game Reviews</b>
+<b> preCOVID Results </b>
+![image](https://user-images.githubusercontent.com/63023492/155868277-bd10961b-1423-4ac8-b7b9-c0288f4d8d53.png)
+<b> COVID Results </b>
+![image](https://user-images.githubusercontent.com/63023492/155868279-574afdc7-dab4-4850-92b7-26fe9583c031.png)
+
+<b> Figure 12. YAKE Keyword Extraction, Top 10 Keywords for Each Text Field</b>
+![image](https://user-images.githubusercontent.com/63023492/155868296-8f6a89fd-59d1-40b6-ac53-550cf71012ec.png)
+
+<b> Figure 13. spaCy Keyword Extraction, Top 10 Keywords for Each Text Field</b>
+<b> All Game Data </b>
+![image](https://user-images.githubusercontent.com/63023492/155868316-4be80e85-56d4-4806-b316-0906b03f4339.png)
+<b> PreCOVID Data </b>
+![image](https://user-images.githubusercontent.com/63023492/155868348-226b4daa-1516-48bf-9748-83a1704230ab.png)
+<b> During COVID Data </b>
+![image](https://user-images.githubusercontent.com/63023492/155868352-158ec046-0b1e-4839-98c6-532a3f6e6117.png)
+
 
 ## Methods:
 
