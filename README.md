@@ -110,10 +110,8 @@ Despite there being so many games with a zero review score (essentially indicati
 ### EDA Informed Data Wrangling
 
 <b> Figure 4. EDA Informed Data Processing Steps </b>
-   <p align="center">
-      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Additional%20Processing.png" width="700" title="Steps for Additional Data Processing">
-  </p>
-  
+![image](https://user-images.githubusercontent.com/63023492/156081724-23d930b1-4481-4497-8f5f-d35c64860a53.png)
+
 ### Exploratory Analysis Part 2
 
 After the second round of processing, the correlation matrix is somewhat easier to read:
