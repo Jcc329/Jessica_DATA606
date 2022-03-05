@@ -25,6 +25,8 @@ Data Science Capstone Project <br>
   <li><b>Report and Presentations</b> - File containing Project Presentations and the Final Report</li>
 </ul>
 
+<b> View a presentation describing the exploratory analysis here: <a href="https://youtu.be/sszaeOh7gMk">EDA Presentation (Youtube)</a>
+  
 ## Introduction
 
 The game industry is an intensely competitive, multi-billion-dollar industry, with tens of thousands of games being released every year. Both large game producers and small indie game developers are competing in this space, and while many games succeed, many more fail. Steam, a video game distribution service, released more than 10,000 games in 2020 alone (Number of Games Released on Steam 2021, n.d.). Needless to say, the industry does not look like it’s slowing down any time soon (Video Game Market Value Worldwide 2015, n.d.). Not only are the number of games produced growing every year, but so are the types of games and the number of players. As more powerful graphics cards and gaming architecture is being developed, as well as a global pandemic to contend with, the uses of gaming are evolving as well, with more and more players turning to games as a social outlet (Global Insights Report - Google for Games, n.d.). In their 2021 Global Insights Report, Google found an increase of 45% in the number of gamers playing new games since the start of the pandemic (Global Insights Report - Google for Games, n.d.). One approach that the report highlighted as successful is a player-first strategy, stating that ‘the best game developers deeply understand their players’ (Global Insights Report - Google for Games, n.d.).  But how does a game developer understand their players? <br>
@@ -110,10 +112,8 @@ Despite there being so many games with a zero review score (essentially indicati
 ### EDA Informed Data Wrangling
 
 <b> Figure 4. EDA Informed Data Processing Steps </b>
-   <p align="center">
-      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Additional%20Processing.png" width="700" title="Steps for Additional Data Processing">
-  </p>
-  
+![image](https://user-images.githubusercontent.com/63023492/156081724-23d930b1-4481-4497-8f5f-d35c64860a53.png)
+
 ### Exploratory Analysis Part 2
 
 After the second round of processing, the correlation matrix is somewhat easier to read:
