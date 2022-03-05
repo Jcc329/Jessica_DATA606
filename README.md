@@ -26,6 +26,10 @@ Data Science Capstone Project <br>
 </ul>
 
 <b> View a presentation describing the exploratory analysis here: <a href="https://youtu.be/sszaeOh7gMk">EDA Presentation (Youtube)</a>
+  
+  <iframe width="420" height="315"
+src="https://youtu.be/sszaeOh7gMk">
+  </iframe>
 
 ## Introduction
 
