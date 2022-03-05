@@ -25,7 +25,7 @@ Data Science Capstone Project <br>
   <li><b>Report and Presentations</b> - File containing Project Presentations and the Final Report</li>
 </ul>
 
-<b> View a presentation describing the exploratory analysis here: <a href="https://youtu.be/sszaeOh7gMk">EDA Presentation (Youtube)</a>
+<b> View a presentation describing the exploratory analysis here: <a href="https://youtu.be/sszaeOh7gMk">EDA Presentation (Youtube)</a></b>
   
 ## Introduction
 
