@@ -174,13 +174,13 @@ When comparing keywords between the pre-COVID and during COVID corpora there wer
 <b> preCOVID Results </b>
 ![image](https://user-images.githubusercontent.com/63023492/155868277-bd10961b-1423-4ac8-b7b9-c0288f4d8d53.png)
 
-![image](https://user-images.githubusercontent.com/63023492/158691544-ed0d8256-0561-492b-b604-9a49b2f42c7f.png)
+![image](https://user-images.githubusercontent.com/63023492/158691758-64d398a4-62df-46d2-bcf6-c9bb0142d939.png)
 
 
 <b> COVID Results </b>
 ![image](https://user-images.githubusercontent.com/63023492/155868427-970298e8-ff6c-4466-b023-51daecf4e4dc.png)
 
-![image](https://user-images.githubusercontent.com/63023492/158691554-e88a6418-e98a-474b-a85c-ba2a18417e9a.png)
+![image](https://user-images.githubusercontent.com/63023492/158691739-fff3f175-391f-4cba-9870-19f9261a920c.png)
 
 
 <b> Figure 12. YAKE Keyword Extraction, Top 10 Keywords for Each Text Field</b>
