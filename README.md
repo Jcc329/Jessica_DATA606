@@ -122,6 +122,9 @@ After the second round of processing, the correlation matrix is somewhat easier 
    <p align="center">
       <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Updated%20Correlation%20Matrix.png" width="700" title="Spearman's Correlation Matrix" alt="A correlation matrix showing how the features relate to eachother using the Spearman's coefficient. The Figure demonstrates that few of the features have correlate with eachother.">
   </p>
+
+![image](https://user-images.githubusercontent.com/63023492/158695685-f564c724-e303-4177-a431-a2d044093cf2.png)
+
   
 From this we can see some minor correlations among genres and catagories, but no major fields correlating with the target variables. As expected, fields like price, initial price, and discount are also highly correlated. When training an ML model I will remove fields (like price) that are highly similar to other featuers.
 
