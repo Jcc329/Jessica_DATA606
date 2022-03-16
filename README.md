@@ -136,21 +136,21 @@ The following figures explore distributions in the data.
   
 The number of games released each year has grown steadily, which is reflected in the sample data collected. Time and trend based analyses will require that this be factored in.
 
-<b> Figure 7. Most Common Genres and Game Categories</b>
+<b> Figure 7. Top 10 Most Common Genres and Game Categories</b>
    <p align="center">
-      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/SampledGamesbyGenre.png" width="700" title="Genre Frequency" alt="The number of games released for each genre tag (one game may have multiple genres). The most common genres were Indie and Action.">
-        <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/SampledGamesbyCategory.png" width="700" title="Category Frequency" alt="The number of games released for each category tag (one game may have multiple categories). The most common category was single player, followed by Steam Acheivements and Downloadable content.">
+     ![image](https://user-images.githubusercontent.com/63023492/158691059-1aba5cb9-6da0-4d39-898f-5e4710bdaad1.png)
+        ![image](https://user-images.githubusercontent.com/63023492/158691134-a5704e19-e843-442e-ae63-c104c1c778e8.png)
   </p>
 
-Figure 7 shows the number of games that had each of the Genre or Category tags associated with them. A game could have multiple Genres or Categories. Examining the most commonly made game genres and categories (Indie, Action, and Single Player) made me wonder how these have changed over time. The next set of figures looks at the proportions of games released by genre and category.
+Figure 7 shows the top ten categories by number of games that had each of the Genre or Category tags associated with them. A game could have multiple Genres or Categories. Examining the most commonly made game genres and categories (Indie, Action, and Single Player) made me wonder how these have changed over time. The next set of figures looks at the proportions of games released by genre and category.
 
-<b> Figure 8. Change in Genre Composition of Games Released over Time</b>
+<b> Figure 8. Change in Top 10 Genres of Games Released over Time</b>
    <p align="center">
-      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Change%20in%20Genre%20over%20Time.png" width="700" title="Genre over Time" alt="The porportion of each genre represented in a year over time.">
+    ![image](https://user-images.githubusercontent.com/63023492/158691234-7825e1fe-ee04-45db-80a0-8ee7127139ba.png)
   </p>
-<b> Figure 9. Change in Category Composition of Games Released over Time</b>
+<b> Figure 9. Change in Top 10 Categories of Games Released over Time</b>
    <p align="center">
-      <img src="https://github.com/Jcc329/Jessica_DATA606/blob/main/Supplemental%20Files/Change%20in%20Categories%20over%20Time.png" width="700" title="Category over Time" alt="The porportion of each category represented in a year over time.">
+    ![image](https://user-images.githubusercontent.com/63023492/158691358-db90c75b-59fc-479c-a894-2101f8a969cf.png)
     </p>
 As can be seen in Figure 8, the proportion of indie games released each year has grown steadily. Action games have settled to a consistent level with casual and adventure games fluctuating below. 
 Figure 9. shows that single player games have and continue to dominate, while other types of games represent fairly consistent proportions of the market.
@@ -174,8 +174,13 @@ When comparing keywords between the pre-COVID and during COVID corpora there wer
 <b> preCOVID Results </b>
 ![image](https://user-images.githubusercontent.com/63023492/155868277-bd10961b-1423-4ac8-b7b9-c0288f4d8d53.png)
 
+![image](https://user-images.githubusercontent.com/63023492/158691758-64d398a4-62df-46d2-bcf6-c9bb0142d939.png)
+
+
 <b> COVID Results </b>
 ![image](https://user-images.githubusercontent.com/63023492/155868427-970298e8-ff6c-4466-b023-51daecf4e4dc.png)
+
+![image](https://user-images.githubusercontent.com/63023492/158691739-fff3f175-391f-4cba-9870-19f9261a920c.png)
 
 
 <b> Figure 12. YAKE Keyword Extraction, Top 10 Keywords for Each Text Field</b>
