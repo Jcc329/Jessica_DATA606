@@ -141,20 +141,25 @@ The number of games released each year has grown steadily, which is reflected in
 
 <b> Figure 7. Top 10 Most Common Genres and Game Categories</b>
    <p align="center">
-     ![image](https://user-images.githubusercontent.com/63023492/158691059-1aba5cb9-6da0-4d39-898f-5e4710bdaad1.png)
-        ![image](https://user-images.githubusercontent.com/63023492/158691134-a5704e19-e843-442e-ae63-c104c1c778e8.png)
+  
+  ![image](https://user-images.githubusercontent.com/63023492/161456797-2cb1b0a7-546b-444a-af1e-d25ad3cb1f76.png)
+  
+  ![image](https://user-images.githubusercontent.com/63023492/161456780-08b4bb88-25aa-4b87-afa8-6d89d3d88638.png)
   </p>
 
 Figure 7 shows the top ten categories by number of games that had each of the Genre or Category tags associated with them. A game could have multiple Genres or Categories. Examining the most commonly made game genres and categories (Indie, Action, and Single Player) made me wonder how these have changed over time. The next set of figures looks at the proportions of games released by genre and category.
 
 <b> Figure 8. Change in Top 10 Genres of Games Released over Time</b>
    <p align="center">
-    ![image](https://user-images.githubusercontent.com/63023492/158691234-7825e1fe-ee04-45db-80a0-8ee7127139ba.png)
+  
+  ![image](https://user-images.githubusercontent.com/63023492/158691234-7825e1fe-ee04-45db-80a0-8ee7127139ba.png)
   </p>
 <b> Figure 9. Change in Top 10 Categories of Games Released over Time</b>
    <p align="center">
-    ![image](https://user-images.githubusercontent.com/63023492/158691358-db90c75b-59fc-479c-a894-2101f8a969cf.png)
+  
+  ![image](https://user-images.githubusercontent.com/63023492/158691358-db90c75b-59fc-479c-a894-2101f8a969cf.png)
     </p>
+    
 As can be seen in Figure 8, the proportion of indie games released each year has grown steadily. Action games have settled to a consistent level with casual and adventure games fluctuating below. 
 Figure 9. shows that single player games have and continue to dominate, while other types of games represent fairly consistent proportions of the market.
   
@@ -175,27 +180,41 @@ When comparing keywords between the pre-COVID and during COVID corpora there wer
 <b> Figure 11. TFIDF Vectorization and Ngram Analysis, Game Reviews</b>
 
 <b> preCOVID Results </b>
+
 ![image](https://user-images.githubusercontent.com/63023492/155868277-bd10961b-1423-4ac8-b7b9-c0288f4d8d53.png)
 
-![image](https://user-images.githubusercontent.com/63023492/158691758-64d398a4-62df-46d2-bcf6-c9bb0142d939.png)
+![image](https://user-images.githubusercontent.com/63023492/161457118-6f1669aa-e2e7-47b0-87b3-8516dd955176.png)
 
 
 <b> COVID Results </b>
+
 ![image](https://user-images.githubusercontent.com/63023492/155868427-970298e8-ff6c-4466-b023-51daecf4e4dc.png)
 
-![image](https://user-images.githubusercontent.com/63023492/158691739-fff3f175-391f-4cba-9870-19f9261a920c.png)
+![image](https://user-images.githubusercontent.com/63023492/161457128-b07509d3-eb7a-4180-ba4e-aa330a6e867d.png)
 
 
 <b> Figure 12. YAKE Keyword Extraction, Top 10 Keywords for Each Text Field</b>
-![image](https://user-images.githubusercontent.com/63023492/155868296-8f6a89fd-59d1-40b6-ac53-550cf71012ec.png)
+<b> All Game Data </b>
 
+![image](https://user-images.githubusercontent.com/63023492/161457195-d7d2288f-3e25-4d6a-863b-0a2c7eb4d959.png)
+
+<b> PreCOVID Data </b>
+
+![image](https://user-images.githubusercontent.com/63023492/161457220-2b309f02-3c81-4573-b8e4-9b3b5ec960fa.png)
+
+<b> During COVID Data </b>
+
+![image](https://user-images.githubusercontent.com/63023492/161457244-ca7e37eb-3d97-454b-b641-d540a9203588.png)
 
 <b> Figure 13. spaCy Keyword Extraction, Top 10 Keywords for Each Text Field</b>
 <b> All Game Data </b>
+
 ![image](https://user-images.githubusercontent.com/63023492/155868316-4be80e85-56d4-4806-b316-0906b03f4339.png)
 <b> PreCOVID Data </b>
+
 ![image](https://user-images.githubusercontent.com/63023492/155868348-226b4daa-1516-48bf-9748-83a1704230ab.png)
 <b> During COVID Data </b>
+
 ![image](https://user-images.githubusercontent.com/63023492/155868420-cac76d2b-e8db-4ee0-86b1-6c3b2aab7848.png)
 
 
