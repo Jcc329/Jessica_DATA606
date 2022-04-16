@@ -220,6 +220,43 @@ When comparing keywords between the pre-COVID and during COVID corpora there wer
 
 ![image](https://user-images.githubusercontent.com/63023492/155868420-cac76d2b-e8db-4ee0-86b1-6c3b2aab7848.png)
 
+### LDA Topic Modeling
+
+To start, I calculated the Coherence scores by number of topics in order to identify the ideal number of topics across the corpus. The visualization of coherence scores for the entire corpus of game descriptions is shown in figure 14. I then fed the generated ideal number of topics into the LDA model, the results of which are shown in Tables 1-3. 
+
+<b> Figure 14. LDA Coherence Scores by Number of Topics (u_mass) – All Data </b>
+![image](https://user-images.githubusercontent.com/63023492/163688880-5a44b5e4-be60-492d-afe2-237d8a7ccfe8.png)
+
+The ideal number of topics for the entire description corpus was identified as 99 while for the review data the number was 75 and the tag data gave 38. For the pre-COVID dataset the topic counts were 75, 69, and 58 respectively, while the during COVID dataset identified 84, 94, and 84 respectively. This shows that there were a lot of distinct topics identified and that likely there would be overlap between topics. The top 10 results for each corpus are shown below.
+
+<b> Table 1. Top 10 Topics extracted using LDA, Description Topics </b>
+![image](https://user-images.githubusercontent.com/63023492/163693003-f0a872da-a3ae-4ba9-ba95-83fa97b28261.png)
+
+<b> Table 2. Top 10 Topics extracted using LDA, Review Topics </b>
+![image](https://user-images.githubusercontent.com/63023492/163693026-37d3b68d-fc99-4a42-bd00-e54b127114ca.png)
+
+<b> Table 3. Top 10 Topics extracted using LDA, Tag Topics </b>
+![image](https://user-images.githubusercontent.com/63023492/163693034-bbabe668-199a-4886-b111-81824abb7d5b.png)
+
+As you can see, it is difficult to make sense of what these topics are, particularly for reviews and descriptions. The tag topics seem to identify distinct types of games, like single player adventure games, horror shooter survival games, etc. For the complete results, view notebook 5. Topic Modeling </br>
+
+### NMF Topic Modeling 
+The results for the NMF Topic modeling were similar to LDA. Tables 4-6 show the top 10 topics generated using NMF Modeling.
+
+<b> Table 4. Top 10 Topics extracted using NMF, Description Topics </b>
+![image](https://user-images.githubusercontent.com/63023492/163693076-fda6c699-9764-426a-89ae-d156eaa141ff.png)
+
+<b> Table 5. Top 10 Topics extracted using NMF, Review Topics </b>
+![image](https://user-images.githubusercontent.com/63023492/163693099-341841d7-d980-4372-9cd7-afc1d4e82e5e.png)
+
+<b> Table 6. Top 10 Topics extracted using NMF, Tag Topics </b>
+![image](https://user-images.githubusercontent.com/63023492/163693135-0374706d-987e-46d4-8850-cff1fe243bb1.png)
+
+These topics further support a lack of distinction between pre-COVID and during COVID data. I will finalize this conclusion with a similarity analysis before progressing to the clustering stage of the project. 
+ 
+## Similarity analysis
+## Game Clustering and Cluster Analysis
+## Machine Learning Modeling
 
 ## Methods:
 
