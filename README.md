@@ -255,7 +255,27 @@ The results for the NMF Topic modeling were similar to LDA. Tables 4-6 show the 
 These topics further support a lack of distinction between pre-COVID and during COVID data. I will finalize this conclusion with a similarity analysis before progressing to the clustering stage of the project. 
  
 ## Similarity analysis
+Using a bert sentence encoder, I encoded each of the text fields and aggregated by year. I then utilized cosine similarity to identify the degree of similarity across years. While this analysis includes all years for which there is data, it’s important to remember that the count of games in my data set was below 100 for all years 2011 and prior. I will therefore exclude these years from the final analysis. The remaining years have high levels of similarity and will all therefore be included. I also compared the pre-COVID and during COVID datasets directly and found extremely high similarity. I will therefore proceed with all the data from 2012 and forward. 
+Figure 14. Similarities in Descriptions by Year
+![image](https://user-images.githubusercontent.com/63023492/163693599-809cd7b1-0565-4830-a06f-558fef3dad32.png)
+
+Figure 15. Similarities in Reviews by Year
+![image](https://user-images.githubusercontent.com/63023492/163693602-01057d42-c8a4-42bc-b92a-0869115f030d.png)
+
+Figure 16. Similarities in Tags by Year
+![image](https://user-images.githubusercontent.com/63023492/163693604-ac04b48a-51b4-4676-ae17-81bfba9135a2.png)
+
+Figure 17. Similarities in Descriptions by Covid Status
+![image](https://user-images.githubusercontent.com/63023492/163693606-3cca0781-11b0-4625-9c42-23c4905f7297.png)
+
+Figure 18. Similarities in Reviews by Covid Status
+![image](https://user-images.githubusercontent.com/63023492/163693608-34f9957f-3a3a-4d22-92f2-37059a70f2c8.png)
+
+Figure 19. Similarities in Tags by Covid Status
+![image](https://user-images.githubusercontent.com/63023492/163693612-aa3bda6b-35f0-4cd4-b9b4-c8af117f9132.png)
+
 ## Game Clustering and Cluster Analysis
+
 ## Machine Learning Modeling
 
 ## Methods:
