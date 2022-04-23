@@ -31,7 +31,10 @@ Data Science Capstone Project <br>
   <li><b>Report and Presentations</b> - File containing Project Presentations and the Final Report</li>
 </ul>
 
+
+<b>Click the link to view the resulting Tableau Dashboard: <a href="https://public.tableau.com/app/profile/jessica.conroy/viz/CapstoneProjectAnalysis_16507336527960/Story1">Game Data Analysis Dashboard</a></b>
 <b> View a presentation describing the exploratory analysis here: <a href="https://youtu.be/sszaeOh7gMk">EDA Presentation (Youtube)</a></b>
+<b> View a presentation describing the Topic Modeling, Clustering Analysis, and Results here: <a href="https://youtu.be/d_zSmvHw7Tk">Final Presentation (Youtube)</a></b>
   
 ## Introduction
 
