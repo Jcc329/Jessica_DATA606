@@ -20,7 +20,7 @@ Data Science Capstone Project <br>
     <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/3_2_Word_clouds.ipynb">3.2 Word Clouds</a></li> - Notebook for generating the midterm presentation word clouds
     <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/4_Text_EDA.ipynb">4.Text EDA and COVID Impact Analysis</a> - Notebook containing text exploratory analysis </li>
     <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/5.Topic_Modeling.ipynb">5.Topic Modeling</a> - Notebook containing topic modeling using u_mass coherence </li>
-    <li><a href=" https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/5.Topic_Modeling_c_v.ipynb">5.Topic Modeling_c_v</a> - Notebook containing topic modeling using c_v coherence </li>
+    <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/5.Topic_Modeling_c_v.ipynb">5.Topic Modeling_c_v</a> - Notebook containing topic modeling using c_v coherence </li>
     <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/5.2.Text_Similarity_Analysis.ipynb">5.2 Text Similarity Analysis</a> - Notebook containing text similarity analysis</li>
   </ul>
   <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/README.md">README.md</a> - An overview of the project and results</li> 
