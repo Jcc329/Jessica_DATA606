@@ -72,6 +72,25 @@ A larger dataset was used for the remainder of this project. This was run for 18
 
 After initial exploration and additional processing of the data (see figure4), the final dataset is 14,952 rows and 79 columns. 
 
+## Methods
+
+Below is an outline of the machine learning methods applied in this project.
+
+![image](https://user-images.githubusercontent.com/63023492/164945575-a3149755-36ca-49f5-b40b-4ee89ed8e23b.png)
+
+Initial exploratory data analysis included several natural language processing techniques applied to the text data fields (Description, Review, and Tag data)
+Review data has an associated sentiment and user score already, which was used in the final evaluation of game success. The core of the natural language processing was in the form of  keyword extraction and topic modeling of the text to identify clusters of themes and how they related to the key metrics of success. Earlier in the exploratory analysis phase, this was also used to compare pre-COVID games and during COVID games to identify if there were significant differences.
+
+To perform keyword extraction, I utilized a range of tools including simple TFIDF vectorization and NGRAM analysis, YAKE (Yet another keyword extractor), and spaCy keywork extraction. Each method provided a unique look at the data to allow comparison from multiple angles. 
+For the topic modeling and similarity analysis I used a BERT sentence encoder to vectorize the text before utilizing coherence score to find the optimal number of topics. I tested two different coherence score metrics (u_mass and c_v) before settling on c_v as finding the best results. I then compared LDA and NMF models for generating the actual topics.
+LDA is a generative probabilistic model for identifying topics in a text copora, while NMF factorizes the document term matrix into two smaller matrices which contain weights and variables for each topic in the corpus (Blei et al., 2003; Lee & Seung, 1999). While I expected that NMF will be the better performer, based on both personal experience and the work of Carbonetto, et al. (2021) in actuality, LDA did better for Description and Review text while NMF produced more human readable topics for the Tag data.
+The final stage of my analysis comparing pre- and during COVID games data consisted of a similarity analysis using cosine similarity and Euclidean distance to identify whether or not the vectors were more or less similar depending on when the game was released. The results of all these methods are discussed below. 
+Once the initial comparison of data by COVID status was complete, I performed clustering on the BERT vectorized text using KMeans. I started by identifying the ideal number of clusters using the distortion score elbow method. I then applied KMeans to assign each game to a specific cluster. 
+Topic modeling using LDA and NMF was again performed, this time on each of the resulting clusters. I was then able to perform basing analyses on the resulting clusters and topics to identify those clusters with more successful games on average and their characteristics.
+Blei, D. M., Ng, A. Y., & Jordan, M. I. (2003). Latent Dirichlet Allocation. Journal of Machine Learning Research, 3(Jan), 993–1022.
+Carbonetto, P., Sarkar, A., Wang, Z., & Stephens, M. (2021). Non-negative matrix factorization algorithms greatly improve topic model fits. https://arxiv.org/abs/2105.13440v2
+Lee, D. D., & Seung, H. S. (1999). Learning the parts of objects by non-negative matrix factorization. Nature, 401(6755), 788–791. https://doi.org/10.1038/44565
+
 ### Features of interest include:
 
 ![image](https://user-images.githubusercontent.com/63023492/155862113-0b32b210-579c-4d90-9917-ae33cb165712.png)
@@ -238,24 +257,23 @@ The ideal number of topics for the entire description corpus was identified as 1
 <b> Table 1. Top 5 Topics extracted using LDA, Description Topics </b>
 ![image](https://user-images.githubusercontent.com/63023492/164861797-4e73929e-1b7e-42de-bc15-50446bbd213b.png)
 
-<b> Table 2. Top 10 Topics extracted using LDA, Review Topics </b>
-![image](https://user-images.githubusercontent.com/63023492/163693026-37d3b68d-fc99-4a42-bd00-e54b127114ca.png)
-
-<b> Table 3. Top 10 Topics extracted using LDA, Tag Topics </b>
-![image](https://user-images.githubusercontent.com/63023492/163693034-bbabe668-199a-4886-b111-81824abb7d5b.png)
-
-As you can see, it is difficult to make sense of what these topics are, particularly for reviews and descriptions. The tag topics seem to identify distinct types of games, like single player adventure games, horror shooter survival games, etc. For the complete results, view notebook 5. Topic Modeling </br>
+For the complete results, view notebook 5. Topic Modeling c_v </br>
 
 ### NMF Topic Modeling 
 The results for the NMF Topic modeling were not as coherent as LDA. I therefore proceed using LDA for future modeling. Tables 4 shows and example the top 5 topics generated using NMF Modeling for the description text. The complete list of topics are available in the topic modeling notebooks. 
 
-<b> Table 4. Top 5 Topics extracted using NMF, Description Topics </b>
+<b> Table 2. Top 5 Topics extracted using NMF, Description Topics </b>
 ![image](https://user-images.githubusercontent.com/63023492/164861810-04e085bd-ef78-4551-8f8c-3443f7c54e8d.png)
 
 <b> These topics further support a lack of distinction between pre-COVID and during COVID data. </b> I will finalize this conclusion with a similarity analysis before progressing to the clustering stage of the project. 
+
+<b> Topic Modelling Conclusions </b>
+ 
+ Manual review of the topics did not reveal clear differences between the pre-COVID and during COVID corpora. The next stage of analysis quantifies this finding using cosine similarity analysis.
  
 ## Similarity analysis
-Using a bert sentence encoder, I encoded each of the text fields and aggregated by year. I then utilized cosine similarity to identify the degree of similarity between vectors across years. While this analysis includes all years for which there is data, it’s important to remember that the count of games in my data set was below 100 for all years 2011 and prior. I will therefore exclude these years from the final analysis. The remaining years have high levels of similarity and will all therefore be included. I also compared the pre-COVID and during COVID datasets directly and found extremely high similarity. I will therefore proceed with all the data from 2012 and forward. 
+Using a bert sentence encoder, I encoded each of the text fields and aggregated by year. I then utilized cosine similarity to identify the degree of similarity between vectors across years. While this analysis includes all years for which there is data, it’s important to remember that the count of games in my data set was below 100 for all years 2011 and prior which was a confounding factor in the similarity analysis. Those years with sufficient data had high levels of similarity. I also compared the pre-COVID and during COVID datasets directly and found extremely high similarity. With this in mind, I concluded that the pre and during COVID games were sufficiently similar to include all the data in my final clustering analysis.
+
 Figure 14. Similarities in Descriptions by Year
 ![image](https://user-images.githubusercontent.com/63023492/163693599-809cd7b1-0565-4830-a06f-558fef3dad32.png)
 
@@ -276,32 +294,38 @@ Figure 19. Similarities in Tags by Covid Status
 
 ## Game Clustering and Cluster Analysis
 
-## Methods:
+For the clustering analysis, I used the KMeans elbow method to iterate through differing numbers of clusters and identify the ideal number. I performed the clustering based on description text of the Games as this is a direct characteristic of the games, defined by the game developers. This is visualized in figure 20, which resulted in 32 clusters.
 
-This project will include a combination of Natural Language Processing (NLP), and deep learning techniques. I aim to both identify the characteristics of successful games by genre as well as create a model for predicting whether a new game will receive high ratings.  <br>
+Figure 20. Distortion Score Elbow for Clustering Description Text
+![image](https://user-images.githubusercontent.com/63023492/164945091-ae57703e-2a73-4a2b-a86f-6043ad1ceda4.png)
 
-<b> Text Analysis and Natural Language Processing </b>
+After identifying the ideal number of clusters, I applied the KMeans model and proceeded to analyze the cluster results. Figure 21 shows the frequency of games in each of the identified clusters. 
 
-Initial exploratory data analysis will include several natural language processing techniques applied to the text data fields (Description and Review data) <br>
-Review data has an associated sentiment and user score already, so I will be able to use that to evaluate the relationship between user reviews and metacritic scores. The core of the natural language processing will be in the form of keyword extraction and topic modeling of the text, both descriptions and reviews, to identify clusters of themes and in the text and how they relate to metacritic/user scores. The goal of this analysis is to identify features described in the text that are related to more successful games. <br>
-Methods for topic modeling will include testing a few different models against eachother to identify the best performing model for this dataset. I will vectorize the text using TF-IDF unless I’m able to find a good model for transfer learning to apply to this dataset (I have used BERT in the past to vectorize articles, but it is ill suited for raw review data due to the training data it’s based on). I will then experiment with the use of Latent Dirichlet Allocation (LDA) and Non-negative Matrix Factorization (NMF) for performing the topic modeling. LDA is a generative probabilistic model for identifying topics in a text copora, while NMF factorizes the document term matrix into two smaller matrices which contain weights and variables for each topic in the corpus (Blei et al., 2003; Lee & Seung, 1999). I expect that NMF will be the better performer, based on both personal experience and the work of Carbonetto, et al. (2021). <br>
+Figure 21. Game Frequency by Cluster
+![image](https://user-images.githubusercontent.com/63023492/164945114-0b8619f1-0a60-4535-a3a7-e79136b037d6.png)
 
-Once topic modeling is complete, I can visualize and cluster those topic vectors using some dimensionality reduction and DBSCAN. Then I’ll be able to look at aggregate success measures for each cluster (such as user and metacritic scores, sales, and purchase counts) in order to identify features that relate to higher success. Further, I can do this process for both the pre- and during-COVID time frames in order to identify any potential impact that the pandemic has had on gamer behaviors and what characteristics make a game successful. The result will inform whether or not I train my machine learning model on all the collected data or on only data collected from a time frame after the pandemic began. <br>
+The next stage of the analysis consisted of application of LDA topic modeling on the text of each cluster I also tested with NMF modeling and due to improved outcomes for tag text, I chose to use the NMF results for that text only. <br>
 
-Blei, D. M., Ng, A. Y., & Jordan, M. I. (2003). Latent Dirichlet Allocation. Journal of Machine Learning Research, 3(Jan), 993–1022. <br>
+I then saved the primary topics (those topics with the highest weights) and exported the complete dataset as well as the descriptive statistics to visualize and explore using Tableau. 
 
-Carbonetto, P., Sarkar, A., Wang, Z., & Stephens, M. (2021). Non-negative matrix factorization algorithms greatly improve topic model fits. https://arxiv.org/abs/2105.13440v2 <br>
 
-Lee, D. D., & Seung, H. S. (1999). Learning the parts of objects by non-negative matrix factorization. Nature, 401(6755), 788–791. https://doi.org/10.1038/44565 <br>
+## Results
+Based on the analyses performed using each success metric (Ownership, Average Review Score, and Review Positivity Ratio) I was able to find some consistent features of the most successful games.
 
-<b> Machine Learning Techniques </b>
+Games that belonged to clusters with higher success metrics tended to be Action, Adventure, Indie, or Horror Genres. There was also significant importance placed on the difficulty or challenge rating of the game, the story and worldbuilding, and the quality of puzzles and problem solving. 
 
-For the machine learning portion of the project the goal is to build a model that, given characteristics of a game, will predict the success metric of that game. The specific target metric is yet to be decided as are the methods used to build the predictive model. There are several potential models I could use to predict an outcome. I will likely attempt using a classic neural network (multi-layer perceptron) as my primary method, but test against other models to make sure a simpler model wouldn’t perform better.   
-Additionally if I do end up having time to work with the image thumbnails for each game, I would like to use the methods described in the link below, to convert the image data into color palates, which can then be added to the model discussed above.  Future work might entail clustering images and then building a CNN to identify if image style can predict success of a game, but this is currently outside the scope of a single semester capstone. <br>
+Being labeled as massively multiplayer was not correlated with higher success metrics regardless of year the game came out.
 
-The metric I use to show success of the model will depend on the target variable I choose to attempt to predict. if I end up using a classification via score, I will use accuracy, but if I end up using sales or products sold, I will use root mean squared error (RMSE). <br>
+Click the link to view the resulting Tableau Dashboard: <a href="https://public.tableau.com/app/profile/jessica.conroy/viz/CapstoneProjectAnalysis_16507336527960/Story1">Game Data Analysis Dashboard</a> 
 
-The practical applications of this project include the ability to provide game developers with a clear outline of what players look for in games, as well as some metrics for making business decisions. For example, investing a game that supports multi-player capabilities may be more important to the success of a game than game length. Further, I aim to identify any significant changes in what makes a successful game as a result of the COVID 19 pandemic, and to incorporate those findings into the process of building this model. <br>
+## Limitations
+This project was focused only on Steam game data. It is therefore likely that the trends found in this data may not apply to other game aggregators which may have different audiences. 
 
-In terms of personal goals and outcomes. I hope to gain more practical experience in the use of text analysis techniques and tuning deep learning models. 
+Additionally, while I did my best to get a representative sample of the data, I was not able to scrate the full population of games, and there is potential for sampling bias as a result.
+
+## Next Steps and Future Research
+
+This project could advance in several possible directions.  First, this analysis could be scaled to include non-Steam data from other game aggregators or platforms as well as to include a larger sample, or even the population of Steam data. Furthermore, I was forced to exclude non-english games as a result of my capacity and expanding analysis to those games could open up insights into other markets and audiences.
+
+The second area of further reasearch would be the application of additional machine learning models for classification and game success prediction. It had been my hope early on to use an RNN deep learning model such as LSTM or GRU predict game success using game descripiton text as an input. This could be scaled into an app that industry users could use to input game descriptive text in order to receive an output prediction of success. Time constraints prevented this stage of development but this is definitely an area for future exploration.
 
