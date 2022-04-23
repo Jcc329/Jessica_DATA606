@@ -22,6 +22,8 @@ Data Science Capstone Project <br>
     <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/5.Topic_Modeling.ipynb">5.Topic Modeling</a> - Notebook containing topic modeling using u_mass coherence </li>
     <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/5.Topic_Modeling_c_v.ipynb">5.Topic Modeling_c_v</a> - Notebook containing topic modeling using c_v coherence </li>
     <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/5.2.Text_Similarity_Analysis.ipynb">5.2 Text Similarity Analysis</a> - Notebook containing text similarity analysis</li>
+    <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Notebooks/6.Clustering_Analysis.ipynb">6.Clustering Analysis</a> - Notebook containing the clustering analysis and topic modeling of clusters</li>
+    
   </ul>
   <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/README.md">README.md</a> - An overview of the project and results</li> 
   <li><a href="https://github.com/Jcc329/Jessica_DATA606/blob/main/Proposal.md">Project Proposal</a> - The .py file containing functions called in the notebooks</li
