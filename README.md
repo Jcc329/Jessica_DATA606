@@ -222,15 +222,18 @@ When comparing keywords between the pre-COVID and during COVID corpora there wer
 
 ### LDA Topic Modeling
 
-To start, I calculated the Coherence scores by number of topics in order to identify the ideal number of topics across the corpus. The visualization of coherence scores for the entire corpus of game descriptions is shown in figure 14. I then fed the generated ideal number of topics into the LDA model, the results of which are shown in Tables 1-3. 
+To start, I calculated the Coherence scores by number of topics in order to identify the ideal number of topics across the corpus. I tested two main methods for calculated coherence score, umass and c_v. The literature conflicts with respect to which metric is best for determining coherence but agrees that it is often dependent on the data used topics (Röder, M., Both, A., & Hinneburg, 2015; Zvornicanin, E. 2021). Based on a manual evaluation of the produced topics I found that c_v produced more accurate topics and therefore decided to use this as the metric for determining.  The visualization of coherence scores for the entire corpus of game descriptions is shown in figure 14. I then fed the generated ideal number of topics into the LDA model, the results of which are shown in Tables 1-3. <br>
 
-<b> Figure 14. LDA Coherence Scores by Number of Topics (u_mass) – All Data </b>
-![image](https://user-images.githubusercontent.com/63023492/163688880-5a44b5e4-be60-492d-afe2-237d8a7ccfe8.png)
+Röder, M., Both, A., & Hinneburg, A. (2015). Exploring the Space of Topic Coherence Measures. Proceedings of the Eighth ACM International Conference on Web Search and Data Mining, 399–408. https://doi.org/10.1145/2684822.2685324
+Zvornicanin, E. (2021). When Coherence Score is Good or Bad in Topic Modeling? | Baeldung on Computer Science. https://www.baeldung.com/cs/topic-modeling-coherence-score
 
-The ideal number of topics for the entire description corpus was identified as 99 while for the review data the number was 75 and the tag data gave 38. For the pre-COVID dataset the topic counts were 75, 69, and 58 respectively, while the during COVID dataset identified 84, 94, and 84 respectively. This shows that there were a lot of distinct topics identified and that likely there would be overlap between topics. The top 10 results for each corpus are shown below.
+<b> Figure 14. LDA Coherence Scores by Number of Topics (c_v) – All Data </b>
+![image](https://user-images.githubusercontent.com/63023492/164861604-9a28e4a4-4417-41a0-b063-6f4cbdc05e58.png)
 
-<b> Table 1. Top 10 Topics extracted using LDA, Description Topics </b>
-![image](https://user-images.githubusercontent.com/63023492/163693003-f0a872da-a3ae-4ba9-ba95-83fa97b28261.png)
+The ideal number of topics for the entire description corpus was identified as 11 while for the review data the number was 66 and the tag data gave 13. For the pre-COVID dataset the topic counts were 55, 82, and 19 respectively, while the during COVID dataset identified 68, 5, and 17 respectively. The top 5 results for each corpus are shown below. The complete list of topics as well as the topics produced using the U-Mass metric for coherence are available in the notebooks titled 5.topic modeling.
+
+<b> Table 1. Top 5 Topics extracted using LDA, Description Topics </b>
+![image](https://user-images.githubusercontent.com/63023492/164861797-4e73929e-1b7e-42de-bc15-50446bbd213b.png)
 
 <b> Table 2. Top 10 Topics extracted using LDA, Review Topics </b>
 ![image](https://user-images.githubusercontent.com/63023492/163693026-37d3b68d-fc99-4a42-bd00-e54b127114ca.png)
@@ -241,18 +244,12 @@ The ideal number of topics for the entire description corpus was identified as 9
 As you can see, it is difficult to make sense of what these topics are, particularly for reviews and descriptions. The tag topics seem to identify distinct types of games, like single player adventure games, horror shooter survival games, etc. For the complete results, view notebook 5. Topic Modeling </br>
 
 ### NMF Topic Modeling 
-The results for the NMF Topic modeling were similar to LDA. Tables 4-6 show the top 10 topics generated using NMF Modeling.
+The results for the NMF Topic modeling were not as coherent as LDA. I therefore proceed using LDA for future modeling. Tables 4 shows and example the top 5 topics generated using NMF Modeling for the description text. The complete list of topics are available in the topic modeling notebooks. 
 
-<b> Table 4. Top 10 Topics extracted using NMF, Description Topics </b>
-![image](https://user-images.githubusercontent.com/63023492/163693076-fda6c699-9764-426a-89ae-d156eaa141ff.png)
+<b> Table 4. Top 5 Topics extracted using NMF, Description Topics </b>
+![image](https://user-images.githubusercontent.com/63023492/164861810-04e085bd-ef78-4551-8f8c-3443f7c54e8d.png)
 
-<b> Table 5. Top 10 Topics extracted using NMF, Review Topics </b>
-![image](https://user-images.githubusercontent.com/63023492/163693099-341841d7-d980-4372-9cd7-afc1d4e82e5e.png)
-
-<b> Table 6. Top 10 Topics extracted using NMF, Tag Topics </b>
-![image](https://user-images.githubusercontent.com/63023492/163693135-0374706d-987e-46d4-8850-cff1fe243bb1.png)
-
-These topics further support a lack of distinction between pre-COVID and during COVID data. I will finalize this conclusion with a similarity analysis before progressing to the clustering stage of the project. 
+<b> These topics further support a lack of distinction between pre-COVID and during COVID data. </b> I will finalize this conclusion with a similarity analysis before progressing to the clustering stage of the project. 
  
 ## Similarity analysis
 Using a bert sentence encoder, I encoded each of the text fields and aggregated by year. I then utilized cosine similarity to identify the degree of similarity between vectors across years. While this analysis includes all years for which there is data, it’s important to remember that the count of games in my data set was below 100 for all years 2011 and prior. I will therefore exclude these years from the final analysis. The remaining years have high levels of similarity and will all therefore be included. I also compared the pre-COVID and during COVID datasets directly and found extremely high similarity. I will therefore proceed with all the data from 2012 and forward. 
